@@ -75,7 +75,7 @@
 
   <script>
   const countdown = document.getElementById('countdown');
-  const weddingDate = new Date('2025-10-25T17:00:00-03:00');
+  const weddingDate = new Date('2025-10-25T17:00:00'); // Local time
 
   function getMonthDiff(from, to) {
     let months = (to.getFullYear() - from.getFullYear()) * 12;
@@ -90,18 +90,28 @@
       return;
     }
 
+    // Meses e dias
     const totalMonths = getMonthDiff(now, weddingDate);
     const tempDate = new Date(now);
     tempDate.setMonth(tempDate.getMonth() + totalMonths);
+    
+    let remainingTime = weddingDate - tempDate;
+    let extraDays = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
 
-    let extraDays = Math.floor((weddingDate - tempDate) / (1000 * 60 * 60 * 24));
+    const dateAfterMonthsAndDays = new Date(tempDate);
+    dateAfterMonthsAndDays.setDate(dateAfterMonthsAndDays.getDate() + extraDays);
+    remainingTime = weddingDate - dateAfterMonthsAndDays;
 
-    countdown.textContent = `${totalMonths} ${totalMonths === 1 ? 'mês' : 'meses'} e ${extraDays} ${extraDays === 1 ? 'dia' : 'dias'} restantes`;
+    const hours = Math.floor((remainingTime / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((remainingTime / (1000 * 60)) % 60);
+
+    countdown.textContent = `${totalMonths} ${totalMonths === 1 ? 'mês' : 'meses'}, ${extraDays} ${extraDays === 1 ? 'dia' : 'dias'}, ${hours}h e ${minutes}min restantes`;
   }
 
   updateCountdown();
-  setInterval(updateCountdown, 1000 * 60 * 60); // Atualiza a cada hora
+  setInterval(updateCountdown, 1000 * 60); // Atualiza a cada minuto
 </script>
+
 
 
 
