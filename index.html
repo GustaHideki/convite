@@ -3,119 +3,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Convite de Casamento</title>
+  <title>Nosso Casamento</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap">
   <style>
     .font-vibes { font-family: 'Great Vibes', cursive; }
   </style>
 </head>
 <body class="bg-pink-50 text-gray-800">
+  <div class="max-w-2xl mx-auto p-6 text-center">
+    <h1 class="text-5xl font-vibes text-pink-600 mb-4">Nosso Grande Dia</h1>
+    <p class="text-lg">Estamos muito felizes em convidar você para o nosso casamento!</p>
 
-  <!-- Header -->
-  <header class="text-center py-12 px-4 bg-white shadow-md">
-    <h1 class="text-5xl font-vibes text-pink-600">Bianca & Gustavo</h1>
-    <p class="text-lg mt-2">Estão felizes em convidar você para o nosso casamento!</p>
-  </header>
-
-  <!-- Foto principal -->
-  <section class="my-10 px-4">
-    <img src="./Imagem do WhatsApp de 2025-05-04 à(s) 15.20.38_a59b01d8.jpg" alt="Foto do casal" class="mx-auto rounded-xl shadow-lg max-w-full sm:max-w-2xl" />
-  </section>
-
-  <!-- Detalhes do casamento -->
-  <section class="text-center px-4 space-y-6">
-    <h2 class="text-3xl font-vibes text-pink-600">Detalhes do Evento</h2>
-    <div class="text-lg">
-      <p><strong>Data:</strong> 25 de Outubro de 2025</p>
-      <p><strong>Horário:</strong> 12h00</p>
-      <p><strong>Local:</strong> Rua das Mangas - JD Marajoara - 119 - Jundiaí-SP</p>
-      
+    <!-- Contador estilizado -->
+    <div id="countdown" class="mt-6 inline-block px-6 py-4 bg-white rounded-2xl shadow-lg text-pink-600 text-2xl font-semibold font-vibes border border-pink-200">
+      Carregando...
     </div>
-    <a 
-  href="https://www.google.com/maps/search/?api=1&query=R.+das+Mangas,+119+-+Jardim+Marajoara" 
-  target="_blank"
-  class="inline-block bg-pink-600 text-white px-6 py-3 rounded-full shadow hover:bg-green-700 transition"
->
-  Ver Local no Google Maps
-</a>
 
-  </section>
+    <!-- Detalhes do evento -->
+    <section class="mt-12 space-y-4">
+      <h2 class="text-3xl font-vibes text-pink-600">Detalhes do Evento</h2>
+      <p><strong>Data:</strong> 25 de Outubro de 2025</p>
+      <p><strong>Horário:</strong> 17h00</p>
+      <p><strong>Local:</strong> R. das Mangas, 119 - Jardim Marajoara</p>
+      <a 
+        href="https://www.google.com/maps/search/?api=1&query=R.+das+Mangas,+119+-+Jardim+Marajoara" 
+        target="_blank"
+        class="inline-block bg-green-600 text-white px-6 py-3 rounded-full shadow hover:bg-green-700 transition"
+      >
+        Ver Local no Google Maps
+      </a>
+    </section>
 
-  <!-- Contagem Regressiva (opcional) -->
-  <section class="text-center mt-12 px-4">
-    <h2 class="text-2xl font-semibold text-pink-500 mb-2">Contagem Regressiva</h2>
-   <div id="countdown" class="mt-4 inline-block px-6 py-4 bg-white rounded-2xl shadow-lg text-pink-600 text-3xl font-semibold font-vibes border border-pink-200">
-  Carregando...
-</div>
+    <!-- Botão para adicionar na agenda -->
+    <section class="mt-10">
+      <h2 class="text-2xl font-semibold text-pink-500 mb-4">Salvar na Agenda</h2>
+      <a 
+        href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Casamento+de+Nome+e+Nome&dates=20251025T200000Z/20251025T230000Z&details=Nosso+casamento+será+um+dia+inesquecível!&location=R.+das+Mangas,+119+-+Jardim+Marajoara&sf=true&output=xml" 
+        target="_blank"
+        class="inline-block bg-pink-500 text-white px-6 py-3 rounded-full shadow hover:bg-pink-600 transition"
+      >
+        Adicionar à Google Agenda
+      </a>
+    </section>
+  </div>
 
-  </section>
-
-  
- 
-  <!-- Confirmação de presença substituída por botão de agenda -->
-<section class="text-center mt-16 mb-12 px-4">
-  <h2 class="text-2xl font-semibold text-pink-500 mb-4">Salvar na Agenda</h2>
-  <a 
-  href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Casamento+de+Bianca+e+Gustavo&dates=20251025T200000Z/20251025T230000Z&details=Nosso+casamento+será+um+dia+inesquecível!&location=R.+das+Mangas,+119+-+Jardim+Marajoara&sf=true&output=xml" 
-  target="_blank"
-  class="inline-block bg-pink-500 text-white px-6 py-3 rounded-full shadow hover:bg-pink-600 transition"
->
-  Adicionar à Google Agenda
-</a>
-
-</section>
-
-
-  <!-- Rodapé -->
-  <footer class="text-center text-sm text-gray-500 py-6">
-    Feito com ❤️ por Gustavo & Bianca
-  </footer>
-
+  <!-- Script da contagem regressiva -->
   <script>
-  const countdown = document.getElementById('countdown');
-  const weddingDate = new Date('2025-10-25T17:00:00'); // Local time
+    const countdown = document.getElementById('countdown');
+    const weddingDate = new Date('2025-10-25T17:00:00');
 
-  function getMonthDiff(from, to) {
-    let months = (to.getFullYear() - from.getFullYear()) * 12;
-    months += to.getMonth() - from.getMonth();
-    return months;
-  }
-
-  function updateCountdown() {
-    const now = new Date();
-    if (now >= weddingDate) {
-      countdown.textContent = "O grande dia chegou!";
-      return;
+    function getMonthDiff(from, to) {
+      let months = (to.getFullYear() - from.getFullYear()) * 12;
+      months += to.getMonth() - from.getMonth();
+      return months;
     }
 
-    // Meses e dias
-    const totalMonths = getMonthDiff(now, weddingDate);
-    const tempDate = new Date(now);
-    tempDate.setMonth(tempDate.getMonth() + totalMonths);
-    
-    let remainingTime = weddingDate - tempDate;
-    let extraDays = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+    function updateCountdown() {
+      const now = new Date();
+      if (now >= weddingDate) {
+        countdown.textContent = "O grande dia chegou!";
+        return;
+      }
 
-    const dateAfterMonthsAndDays = new Date(tempDate);
-    dateAfterMonthsAndDays.setDate(dateAfterMonthsAndDays.getDate() + extraDays);
-    remainingTime = weddingDate - dateAfterMonthsAndDays;
+      const totalMonths = getMonthDiff(now, weddingDate);
+      const tempDate = new Date(now);
+      tempDate.setMonth(tempDate.getMonth() + totalMonths);
+      
+      let remainingTime = weddingDate - tempDate;
+      let extraDays = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
 
-    const hours = Math.floor((remainingTime / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((remainingTime / (1000 * 60)) % 60);
+      const dateAfterMonthsAndDays = new Date(tempDate);
+      dateAfterMonthsAndDays.setDate(dateAfterMonthsAndDays.getDate() + extraDays);
+      remainingTime = weddingDate - dateAfterMonthsAndDays;
 
-    countdown.textContent = `${totalMonths} ${totalMonths === 1 ? 'mês' : 'meses'}, ${extraDays} ${extraDays === 1 ? 'dia' : 'dias'}, ${hours}h e ${minutes}min restantes`;
-  }
+      const hours = Math.floor((remainingTime / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((remainingTime / (1000 * 60)) % 60);
 
-  updateCountdown();
-  setInterval(updateCountdown, 1000 * 60); // Atualiza a cada minuto
-</script>
+      countdown.textContent = `${totalMonths} ${totalMonths === 1 ? 'mês' : 'meses'}, ${extraDays} ${extraDays === 1 ? 'dia' : 'dias'}, ${hours}h e ${minutes}min restantes`;
+    }
 
-
-
-
-  
-
+    updateCountdown();
+    setInterval(updateCountdown, 1000 * 60);
+  </script>
 </body>
 </html>
