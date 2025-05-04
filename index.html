@@ -8,13 +8,17 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     .font-vibes { font-family: 'Great Vibes', cursive; }
-    body { background-color: #87CEEB; color: #FFFACD; }
+    body { background-color: #E0FFFF; color: #FFFACD; }
     .btn-custom {
       background-color: #FFFACD;
-      color: #87CEEB;
+      color: #E0FFFF;
     }
     .btn-custom:hover {
       background-color: #f0e68c;
+    }
+    .img-bordered {
+      border: 4px solid #ffffff;
+      border-radius: 1rem;
     }
   </style>
 </head>
@@ -22,12 +26,12 @@
   <div class="max-w-2xl mx-auto p-6 text-center">
     <h1 class="text-5xl font-vibes mb-4" style="color: #FFFACD;">Nosso Grande Dia</h1>
     <p class="text-lg">Estamos muito felizes em convidar você para o nosso casamento!</p>
-     <section class="my-10 px-4">
-    <img src="./Imagem do WhatsApp de 2025-05-04 à(s) 15.20.38_a59b01d8.jpg" alt="Foto do casal" class="mx-auto rounded-xl shadow-lg max-w-full sm:max-w-2xl" />
-  </section>
+
+    <!-- Exemplo de imagem com borda -->
+    <img src="./Imagem do WhatsApp de 2025-05-04 à(s) 15.20.38_a59b01d8.jpg" alt="Foto dos noivos" class="mx-auto my-6 w-full max-w-sm img-bordered" />
 
     <!-- Contador estilizado -->
-    <div id="countdown" class="mt-6 inline-block px-6 py-4 bg-white rounded-2xl shadow-lg text-2xl font-semibold font-vibes border border-pink-200" style="color: #87CEEB;">
+    <div id="countdown" class="mt-6 inline-block px-6 py-4 bg-white rounded-2xl shadow-lg text-2xl font-semibold font-vibes border border-pink-200" style="color: #E0FFFF;">
       Carregando...
     </div>
 
